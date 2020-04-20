@@ -9,13 +9,13 @@
 print('*' * 99)
 print("The Game of Life\n\n")
 
-# create container grid for game and add initial cell automata
-import random
+import random, copy, time
 
 next_cells = []
 width = 30
 height = 10
 
+# create container grid for game and add initial cell automata
 for w in range(width):
     column = []
     for h in range(height):
@@ -25,12 +25,15 @@ for w in range(width):
             column.append(' ') # cell is dead
     next_cells.append(column) # next_cells will be a list of list of columns
 
-# print the initial cell automata
 
-for y in range(height):
-    for x in range(width):
-        print(next_cells[x][y], end='')
-    print()
+while True:  # main program loop
+    print('\n' * 5)
+    current_cells = copy.deepcopy(next_cells)
 
-
+    # print the current cells
+    for y in range(height):
+        for x in range(width):
+            print(current_cells[x][y], end='')
+        print()
+    time.sleep(1)
 
