@@ -6,3 +6,31 @@
 #     3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
 # The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
 
+print('*' * 99)
+print("The Game of Life\n\n")
+
+# create container grid for game and add initial cell automata
+import random
+
+next_cells = []
+width = 30
+height = 10
+
+for w in range(width):
+    column = []
+    for h in range(height):
+        if random.randint(0,1) == 1:
+            column.append('#') # cell is alive
+        else:
+            column.append(' ') # cell is dead
+    next_cells.append(column) # next_cells will be a list of list of columns
+
+# print the initial cell automata
+
+for y in range(height):
+    for x in range(width):
+        print(next_cells[x][y], end='')
+    print()
+
+
+
