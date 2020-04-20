@@ -35,5 +35,37 @@ while True:  # main program loop
         for x in range(width):
             print(current_cells[x][y], end='')
         print()
+
+    
+    for x in range(width):
+        for y in range(height):
+            left_coordinate = (x-1) % width   # calculate coordinates of neighboring cells to current cell
+            right_coordinate = (x+1) % width
+            above_coordinate = (x-1) % height
+            below_coordinate = (x+1) % height
+
+            # calculate number of alive neighbors for current cell
+            num_alive_neighbors = 0
+            if current_cells[left_coordinate][above_coordinate] == '#': # top-left neighbor
+                num_alive_neighbors += 1
+            if current_cells[x][above_coordinate] == '#': # top neighbor
+                num_alive_neighbors += 1
+            if current_cells[right_coordinate][above_coordinate] == '#': # top-right neighbor
+                num_alive_neighbors += 1
+            if current_cells[left_coordinate][y] == '#': # left neighbor
+                num_alive_neighbors += 1
+            if current_cells[right_coordinate][y] == '#': # right neighbor
+                num_alive_neighbors += 1
+            if current_cells[left_coordinate][below_coordinate] == '#': # bottom-left neighbor
+                num_alive_neighbors += 1
+            if current_cells[x][below_coordinate] == '#': # bottom neighbor
+                num_alive_neighbors += 1
+            if current_cells[right_coordinate][below_coordinate] == '#': # bottom-right neighbor
+                num_alive_neighbors += 1
+            
+
+
+
+
     time.sleep(1)
 
