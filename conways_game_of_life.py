@@ -63,9 +63,16 @@ while True:  # main program loop
             if current_cells[right_coordinate][below_coordinate] == '#': # bottom-right neighbor
                 num_alive_neighbors += 1
             
+            # calculate the next cell automata based on conway's game of life rules
+            if current_cells[x][y] == '#' and (num_alive_neighbors == 2 or num_alive_neighbors == 3):
+                # living cells with 2 or 3 alive neighbors stay alive in next generation
+                next_cells[x][y] = '#'
+            elif current_cells[x][y] == ' ' and num_alive_neighbors == 3:
+                # dead cells with 3 alive neighbors come alive in next generation
+                next_cells[x][y] = '#'
+            else:
+                # every other cells stays dead or becomes dead
+                next_cells[x][y] = ' '
 
-
-
-
-    time.sleep(1)
+    time.sleep(1) # reduce flickering
 
