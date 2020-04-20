@@ -27,10 +27,10 @@ for w in range(width):
 
 
 while True:  # main program loop
-    print('\n' * 5)
+    print('\n')
     current_cells = copy.deepcopy(next_cells)
 
-    # print the current cells
+    # print the current cell automata
     for y in range(height):
         for x in range(width):
             print(current_cells[x][y], end='')
@@ -71,7 +71,7 @@ while True:  # main program loop
                 # dead cells with 3 alive neighbors come alive in next generation
                 next_cells[x][y] = '#'
             else:
-                # every other cells stays dead or becomes dead
+                # every other cell stays dead or becomes dead
                 next_cells[x][y] = ' '
 
     time.sleep(1) # reduce flickering
