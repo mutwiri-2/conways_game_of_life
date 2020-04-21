@@ -12,8 +12,8 @@ print("The Game of Life\n\n")
 import random, copy, time
 
 next_cells = []
-width = 30
-height = 10
+width = 60
+height = 20
 
 # create container grid for game and add initial cell automata
 for w in range(width):
