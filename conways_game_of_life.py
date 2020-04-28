@@ -5,7 +5,7 @@
 #     2. Any dead cell with three live neighbors becomes a live cell.
 #     3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
 # The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
-
+# for more read >>> https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 print('*' * 99)
 print("The Game of Life\n\n")
 
