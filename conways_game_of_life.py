@@ -19,7 +19,7 @@ while True:  # main program loop
     print('\n')
     current_cells = copy.deepcopy(next_cells)
 
-    # print the current cell automata
+    # print the current cell automata - full row followed by a newline.
     for y in range(height):
         for x in range(width):
             print(current_cells[x][y], end='')
