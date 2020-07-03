@@ -1,6 +1,5 @@
-
 print('*' * 99)
-print("The Game of Life\n\n")
+print("The Game of Life by John Horton Conway (1970)\n\n")
 
 import random, copy, time
 
@@ -12,11 +11,8 @@ height = 20
 for w in range(width):
     column = []
     for h in range(height):
-        if random.randint(0,1) == 1:
-            column.append('#') # cell is alive
-        else:
-            column.append(' ') # cell is dead
-    next_cells.append(column) # next_cells will be a list of list of columns
+        column.append(random.choice([' ', '#']))
+    next_cells.append(column)
 
 
 while True:  # main program loop
