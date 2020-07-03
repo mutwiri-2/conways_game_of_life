@@ -23,3 +23,19 @@
 # preceding one. The rules continue to be applied repeatedly to create further generations.
 
 # for more read >>> https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+Implementation:
+
+1. declare a container to store the cells - a list of lists - inner list is a row 
+of either alive or dead cells
+2. for every iteration of the game, print the current cell automata,then calculate
+the next cell automata based on the current cell automata 
+3. for the above, you need two copies of lists at a time
+4. print current cells one row at a time (using end='') separated by a new line
+5. for each cell, find the cordinates of the neighboring cells - top-left, top, top-right
+left, right, bottom-left, bottom, bottom-right
+6. using the above neighbors, calculate the num of alive neighboring cells for each
+ cell in the current cells
+7. finally, implement the game rules, for each alive cell with two or three alive neighbors
+it lives on and for every dead cell with three alive neighbors it lives on as well and all 
+other cells die or remain dead.
