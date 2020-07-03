@@ -25,10 +25,12 @@ while True:  # main program loop
             print(current_cells[x][y], end='')
         print()
 
-    
+    # calculate coordinates of neighboring cells to current cell
+    # `% width, %height do a wraparound to ensure the values are always between
+    #  0 and the height & width variable`
     for x in range(width):
         for y in range(height):
-            left_coordinate = (x-1) % width   # calculate coordinates of neighboring cells to current cell
+            left_coordinate = (x-1) % width   
             right_coordinate = (x+1) % width
             above_coordinate = (x-1) % height
             below_coordinate = (x+1) % height
